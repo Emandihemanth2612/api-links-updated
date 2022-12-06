@@ -60,7 +60,7 @@ function LandingPage () {
                                 <i class="fas fa-envelope text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Official Website</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="#!">https://www.pfw.edu/</a></div>
+                                <div class="small text-black-50"><a href="https://www.pfw.edu/">https://www.pfw.edu/</a></div>
                             </div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ function LandingPage () {
                     </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://twitter.com/purduefw"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/PurdueFortWayne/"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
         </section>

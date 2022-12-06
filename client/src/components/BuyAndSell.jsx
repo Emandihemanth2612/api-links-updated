@@ -4,13 +4,14 @@ import Row from 'react-bootstrap/Row';
 import {useState, useEffect}  from 'react'
 import axios from 'axios'
 import Header from './Header';
+import './BuyAndSell.css';
 import AddNewItem from './AddNewItem';
 
 function BuyAndSell() {
   const [items, setItems] = useState([]);
   
   useEffect(() => {
-    axios.get("http://localhost:3001/api/items/getItems")
+    axios.get("http://18.222.29.245/api/items/getItems")
     .then((response) => {
         const allItems = response.data.response;
         setItems(allItems)
@@ -25,18 +26,21 @@ function BuyAndSell() {
     
     <>
     <Header />
+
     <AddNewItem />
-    <Row xs={1} md={3} className="g-4" id='cardRow'>
+    <Row xs={1} md={3} class="row">
       {items.map((item) => (
-        <Col>
-          <Card border="success" style={{width: '24rem', height: '14rem', boxShadow: "10px 5px 5px gray", borderRadius: "25px"}}>
+        <Col class="column">
+          <Card border="success" class="card">  
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
+              <Card.Title><h4>{item.name}</h4></Card.Title>
               <Card.Text>
+              <h6>
                 {
                   item.description
                 }
+              </h6>
               </Card.Text>
             </Card.Body>
           </Card>

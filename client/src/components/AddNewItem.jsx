@@ -22,7 +22,7 @@ function AddNewItem() {
     const addNewItem=(e)=>{
       e.preventDefault();
       console.log("function called")
-      Axios.post("http://localhost:3001/api/items/AddItem", {     
+      Axios.post("http://18.222.29.245/api/items/AddItem", {     
         "name" : name,
         "description" : description,
         "price" : price,
@@ -48,21 +48,21 @@ function AddNewItem() {
           
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Item Name</Form.Label>
-              <Form.Control type="text" placeholder="item" autoFocus value={name} onChange={(e)=> setName(e.target.value)}/>
+              <Form.Control name="item" type="text" placeholder="item" autoFocus value={name} onChange={(e)=> setName(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Price</Form.Label>
-              <Form.Control type="text" placeholder="Price" value={price} onChange={(e)=> setPrice(e.target.value)}/>
+              <Form.Control name="price" type="text" placeholder="Price" value={price} onChange={(e)=> setPrice(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={3} value={description} onChange={(e)=> setDescription(e.target.value)} />
+              <Form.Control name="desc" as="textarea" rows={3} value={description} onChange={(e)=> setDescription(e.target.value)} />
             </Form.Group>
             
             <Button variant="secondary" onClick={handleClose}>
             Close
             </Button>
-            <Button type='submit' variant="primary" onClick={handleClose}>
+            <Button type='submit' name="save" variant="primary" onClick={handleClose}>
               Save Changes
             </Button>
           

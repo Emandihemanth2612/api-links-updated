@@ -1,9 +1,12 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import Header from './Header'
+
 
 export default function ProfileStatistics() {
   return (
     <div className="vh-100" style={{ backgroundColor: '#eee' }}>
+      <Header />
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">

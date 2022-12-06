@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from "react"
+import React, { useState} from "react"
 import { useNavigate } from "react-router-dom";
-import Axios from 'axios'
+import Axios from "axios";
+import { useEffect } from "react";
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin")
@@ -11,21 +12,16 @@ export default function (props) {
   const[phoneNumber, setPhoneNumber] = useState("");
 
   const navigate = useNavigate();
-  //const[userId, setUserId] = useState('');
-
-  useEffect(()=>{
+  useEffect(() => {
     const userId = sessionStorage.getItem('user');
-    if(userId)
-    {
-      navigate('/UserFeed');
+    if(userId) {
+      navigate('/UserFeed')
     }
   })
-  
-
   const registerUser=(e)=>{
       e.preventDefault();
       console.log("function called")
-      Axios.post("http://localhost:3001/api/user/RegisterUser", {
+      Axios.post("http://18.222.29.245/api/user/RegisterUser", {
       "name": fullName,
       "address" : address,
       "email" : email,
@@ -33,18 +29,17 @@ export default function (props) {
       "phoneno" : phoneNumber,
   }).then((response) =>{
       alert("Registration Successful!")
+      navigate('/UserFeed');
   });
-  // e.preventDefault();
   };
   const loginUser=(e)=>{
     e.preventDefault();
-    Axios.post("http://localhost:3001/api/user/Login", {
+    Axios.post("http://18.222.29.245/api/user/Login", {
         "email" : email,
         "password" : password,
     }).then((response) =>{
         alert("Login Successful!")
         navigate('/UserFeed');
-        
         sessionStorage.setItem('user', JSON.stringify(response))
     }).catch((error) =>{
       console.error(error.message)
@@ -164,7 +159,6 @@ export default function (props) {
           </div>
         </div>
       </form>
-      (props.data)
     </div>
   )
 }

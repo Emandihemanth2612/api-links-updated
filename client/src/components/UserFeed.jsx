@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import { MDBCard, MDBCardBody, MDBContainer } from "mdb-react-ui-kit";
 import AddNewPost from './AddNewPost';
 import Header from './Header';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios'
+import './UserFeed.css'
 
 function UserFeed() { 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-      axios.get("http://localhost:3001/api/posts/GetPosts")
+      axios.get("http://18.222.29.245/api/posts/GetPosts")
           .then((response) => {
               const allPosts = response.data.response;
               setPosts(allPosts)
@@ -24,6 +26,13 @@ function UserFeed() {
     <div>
     <Header />
     <AddNewPost />
+    {/* <Button variant="primary" onClick={window.scroll({
+    bottom: document.body.scrollHeight, // or document.scrollingElement || document.body
+    left: 0,
+    behavior: 'smooth'
+  })}>
+        Bottom
+      </Button> */}
       {posts.map((post)=>(
         <MDBContainer className="py-5">
         

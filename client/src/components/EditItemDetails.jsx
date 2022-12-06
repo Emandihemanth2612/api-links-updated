@@ -18,7 +18,7 @@ function EditNewItem() {
     
     function editNewItem() {
         console.log("this is function")
-        Axios.post("http://localhost:3001/api/items/UpdateItem",{
+        Axios.post("http://18.222.29.245/api/items/UpdateItem",{
             "_id" : id,
             "name" : name,
             "description" : description,

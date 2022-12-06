@@ -24,7 +24,7 @@ const logout =() =>{
             <Container>
             <LinkContainer to='/'><Navbar.Brand>DONS 365</Navbar.Brand></LinkContainer>            
             <Nav className="me-auto">
-              <LinkContainer to='/'><Nav.Link>Home</Nav.Link></LinkContainer>
+              <LinkContainer to='/UserFeed'><Nav.Link>Home</Nav.Link></LinkContainer>
               <LinkContainer to='/BuyAndSell'><Nav.Link>Buy/Sell</Nav.Link></LinkContainer>
               <LinkContainer to='/Profile'><Nav.Link>Profile</Nav.Link></LinkContainer>
             </Nav>
